@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+	<meta charset="utf-8"/>
+	<title>Listes</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+<body>
+
+<!--
+	page dédiée aux listes des illustrations et des tables
+	comme pour la table des matières, vous faites ce que vous voulez du moment que le lecteur s'y retrouve, et que vous suivez les quelques règles de l'IDPF concernant les balises <nav> : http://www.idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-nav
+	les noms des vocables epub:type « loi » et « lot » sont imposés, mais à usage facultatif.
+	naturellement, c'est typiquement le genre de ressources à générer automatiquement. Un coup de grep, et zou !
+	-->
+
+<section epub:type="backmatter">
+<nav epub:type="loi" id="liste-illustrations">
+<header>
+	<h1>Liste des illustrations</h1>
+</header>
+
+<ol>
+	<li><a href="images/couverture.svg" >couverture</a></li>
+	<li><a href="images/Phoque.svg" >phoque</a></li>
+	<li><a href="images/EPUB_logo.svg" >logo ePub</a></li>
+</ol>
+</nav>
+
+<nav epub:type="lot" id="liste-tables">
+<header>
+	<h1>Liste des tables</h1>
+</header>
+
+<ol>
+	<li><a href="mathml.xhtml#table-exemple">exemple de table</a></li>
+</ol>
+</nav>
+
+</section>
+
+</body>
+</html>

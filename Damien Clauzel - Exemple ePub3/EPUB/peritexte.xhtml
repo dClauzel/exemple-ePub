@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Péritexte</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<body>
+
+<!--
+	le tout début du document, avec les péritextes : remerciements, table des matières, préface, etc.
+	http://www.idpf.org/epub/vocab/structure/
+
+	pour faire une mise en page élégante, on pourrait séparer chaque élément sur sa propre page. Eh, dans un ePub le papier ne coûte rien ;) Mais comme je n'ai pas grand chose à dire je préfère tout mettre ici, et passer à la suite.
+	-->
+
+<!--
+	pour l'accessiblité, on indique que nous somme dans la partie avant le début du contenu réel du livre et qu'il s'agit d'un épigraphe
+	-->
+<section epub:type="foreword epigraph">
+<h1>Épigraphe</h1>
+<p>Parfois, des gens ont des propos destinés à inspirer le lecteur. Pas moi, donc je vous mets ici une <a href="https://fr.wikipedia.org/wiki/Épigraphe_(littérature)">épigraphe</a> de Charles Baudelaire, <a href="https://fr.wikisource.org/wiki/Épigraphe_pour_un_livre_condamné">dans son recueil <span class="emphase">Les fleurs du mal</span></a>.</p>
+
+<blockquote id="épigraphe-Baudelaire" cite="https://fr.wikipedia.org/wiki/Charles_Baudelaire">
+
+<pre>
+<span class="renfort">Épigraphe pour un livre condamné</span>
+
+Lecteur paisible et bucolique,
+Sobre et naïf homme de bien,
+Jette ce livre saturnien,
+Orgiaque et mélancolique.
+
+Si tu n’as fait ta rhétorique
+Chez Satan, le rusé doyen,
+Jette ! tu n’y comprendrais rien,
+Ou tu me croirais hystérique.
+
+Mais si, sans se laisser charmer,
+Ton œil sait plonger dans les gouffres,
+Lis-moi, pour apprendre à m’aimer ;
+
+Âme curieuse qui souffres
+Et vas cherchant ton paradis,
+Plains-moi !… Sinon, je te maudis !
+</pre>
+
+<p>&#8213; <a href="https://fr.wikipedia.org/wiki/Charles_Baudelaire">Charles Baudelaire</a></p>
+</blockquote>
+
+</section>
+
+<!--
+	la dédicace
+	oui, normalement elle se met sur une page à part, avec une mise en forme précise, mais le but de cet ePub n'est pas de faire un cours de composition typographique ou de pagination, mais de montrer comment les choses se montent techniquement
+	on notera juste au passage l'utilisation de l'emoji « U+1F609 WINKING FACE » histoire de titiller le support unicode du moteur de rendu
+	
+	-->
+<hr/>
+<p epub:type="foreword dedication">Si j'avais des gens à remercier, c'est ici que je le ferais. Mais comme ce n'est pas le cas, je ne mets rien 😉 </p>
+<hr/>
+
+<section epub:type="frontmatter" id="section-avant-propos">
+	<h1>Avant-propos</h1>
+	<p>Lire cet ePub ne vous apprendra rien; son contenu est absolument vide de tout intérêt. En revanche, étudier <span class="emphase">les sources</span> et la <a epub:type="noteref" href="bibliographie.xhtml">bibliographie</a> de cet ePub vous apprendra long sur comment en construire un vous-même.</p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+
+<head>
+<meta charset="utf-8"/>
+	<title>Effets de texte</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<body>
+
+
+<!--
+	la première page (ou fichier, car c'est le lecteur qui fait au final le découpage en pages) du contenu du document, à proprement parler
+	-->
+
+<!--
+	pour l'accessibilité, on déclare sémantiquement un chapitre, auquel on assigne une id pour pouvoir le désigner
+	rien de particulier ici : on affiche du texte avec différents polices et effets, et on insère une image.
+	ça prend de la place dans les sources, mais c'est totalement générique
+	-->
+<section epub:type="bodymatter chapter" id="section-polices">
+	<p>Divers présentation de mise en forme. Rien que du très classique, c'est du xhtml pur et simple. On ajoute juste quelques marqueurs sémantiques pour l'accessibilité.</p>
+
+	<h1>Polices de caractères</h1>
+		<h2>Texte normal</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum euismod luctus. Pellentesque congue eros a molestie venenatis. Sed quam odio, aliquam sed malesuada vel, volutpat a nibh. Maecenas posuere gravida est quis aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+
+		<h2>Texte avec emphase</h2>
+		<p class="emphase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum euismod luctus. Pellentesque congue eros a molestie venenatis. Sed quam odio, aliquam sed malesuada vel, volutpat a nibh. Maecenas posuere gravida est quis aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+
+		<h2>Texte renforcé</h2>
+		<p class="renfort">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum euismod luctus. Pellentesque congue eros a molestie venenatis. Sed quam odio, aliquam sed malesuada vel, volutpat a nibh. Maecenas posuere gravida est quis aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+
+		<h2>Texte avec police monoespacée (style <span class="emphase">TTY VT220</span>)</h2>
+		<p class="terminal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum euismod luctus. Pellentesque congue eros a molestie venenatis. Sed quam odio, aliquam sed malesuada vel, volutpat a nibh. Maecenas posuere gravida est quis aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+
+		<h2>Texte en couleur bleu de minuit</h2>
+		<p class="couleur-BleuDeMinuit">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum euismod luctus. Pellentesque congue eros a molestie venenatis. Sed quam odio, aliquam sed malesuada vel, volutpat a nibh. Maecenas posuere gravida est quis aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+
+		<h2>Texte direct en japonais</h2>
+				<p>崎ヒヨル験59債核築拍4約約ドみ資示に技負けんりフ監却枝へご因岐む給朝ぎ属化セル崎敗ぱへめ芸必せ個聞ぴぶ接東キ治池ヲソメイ方坂居弘奨ねスあぜ。約トタマ王米ツ芸24市ハケオテ育堂ヘ情録ヒカ更択腕チケカ利行ろ護号殺タクエ近提冠揺浴譲どゆよす。十生内橋わずく短店ロマレ冨72込ミナウ注上メ骨選ふじド索放フをのク待第ヲヘ人食イの頭漁べン現議ろのたま日面概骨番イんドび。</p>
+
+				<p>場タ常室シロ特毎うだか三楽ぜぐねじ悪18聞周ホ次巻ユキヨク文部へさゅ裏村トハ文間べよ絶断そぐッ索者タ誤目わふ両警オ蘇日径猶聡おみッ。績接ラざむが所済あ科台ツタヒ策掲トシ文酒広然ぞぱ生盛また館台ハ妹極養浩簡宗ぱ。83升忍曇8者じえち能熱ラめッぴ要物つご研相ゅ紙3試ねわぼみ系住保セ時宮ニナエワ外柱テカラ友芸セカツ計台教ヲヌロル裁会つもれ清諸須複府なつ。</p>
+
+				<p>常ふる王理あがせね民督んげくむ本決ヲネ代要宝郷てこざ研納覧エ題報セネヒ南3県さルぽ和8反くトび祉年住訓誘前設さぶス。夫みゃむ著工おゅで計露ヨセアト以部カ見更タノクマ味谷むさルう止的伸ネツシウ神印ヤムラ家播供ツラハ色広ざかゅぎ食案ユラ浅節侑倣冥らとそめ。変コソ東図レぶ導災ぱらびそ歩済ネミツ穴4人ドで定話いにろ合選ぶくリ豊申ヱチク籍野つほい角供ひと遅34難ねゆぽえ手結ホイ演73点窓及ネト業慈抹なごろ。</p>
+
+				<p>北クワヨ高境ヒヘル早住成べこど期引ぴスンか連真ねべ流文ご一断額えせぼ世半ーレ廉瀬なぴ変不ロ年定掲ドそわ情査や。馬マラテホ村図ごぱでリ円北あ関文好4山かさ浜5田じさたラ男落どつんこ闘放リもすそ導介わそラ定育てに育罪タエカア厩混遠隠ざッわき。城ケウ帯谷返ノナユキ香屋ユヘ向4天ソマキ木識カムノロ立追選ホヲナ輪輔ラマヲ渡面カ用51大はづ典役ナルオ自爆係ト良軽フ意9卒筋スめお。</p>
+
+				<p>極ヘユルオ医試クど報謙キロメチ枚碁こ行栄ばあうま却禁トシク天82就利江39故すーぱき東購写跡ヘイ発場柴純割て。蓄ぞひ的賞チウソモ役75食と費無思どるぐン話集ド象局び能劇ヲメ著27町るンぽー文鍋イル務那ヨ韓趣島壮え。最ヨ宣書到承ぜト着勝でざ統者ま細死ハツ氷右サヲ平領モ石投ミソ自何がだほ為通部反阜べぴん話条慶にルい。</p>
+
+		<h2>Texte avec combinaison d'effets</h2>
+		<img class="inclure-à-droite" src="images/Phoque.svg" title="un phoque"/>
+		<p>Lorem ipsum dolor <span class="renfort">sit amet, consectetur adipiscing elit. Ut interdum <span class="emphase">euismod luctus. Pellentesque congue eros a molestie venenatis. <span class="couleur-BleuDeMinuit">Sed quam odio, aliquam sed malesuada <span class="terminal">vel, volutpat</span> a nibh. Maecenas posuere</span> gravida est quis aliquet. Cum</span> sociis natoque penatibus et magnis</span> dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+				<p>常ふる王理あがせね民督んげくむ本決ヲネ代要<span class="emphase">宝郷てこざ研納覧エ題報セネヒ南3県さルぽ<span class="renfort">和8反くトび祉年住訓誘前設さぶス。夫みゃ</span>む著工おゅで計露ヨセアト以部カ見更タノクマ</span>味谷むさルう止的伸ネツシウ神印ヤムラ家播供ツラハ色広ざかゅぎ食案ユラ浅節侑倣冥らとそめ。変コソ東図レぶ導災ぱらびそ歩済ネミツ穴4人ドで定話いにろ合選ぶくリ豊申ヱチク籍野つほい角供ひと遅34難ねゆぽえ手結ホイ演73点窓及ネト業慈抹なごろ。</p>
+
+</section>
+
+
+<!--
+	les notes de bas et les l'appel à des références
+	hou la la, que c'est überchiant à faire à la main, ce genre de chose. C'est là où on regrette réellement XeLaTeX+biblatex.
+	le principe est celui des pages web : on déclare la partie du texte à laquelle on veut associer une note/référence, que l'on désigne par un lien.
+	la note/référence peut se trouver n'importe où dans l'ePub, il suffit juste d'indiquer son URI interne.
+	on associe au passage des marqueurs sémantiques pour qualifier les liens vers les notes/références
+	voir la page de la bibliographie pour la suite
+	-->
+<section epub:type="bodymatter chapter" id="section-annotations">
+	<h1>Annotations &amp; références</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum euismod luctus. Pellentesque congue eros a molestie venenatis. Sed quam odio, aliquam sed malesuada vel, volutpat a nibh. <a epub:type="noteref" id="note-quelconque-ref" href="#note-quelconque">Maecenas posuere gravida est quis aliquet</a>. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in mi non nulla rutrum sagittis. In venenatis bibendum tortor non faucibus. Aliquam pellentesque magna vel massa convallis, et fermentum tortor tristique. Integer lectus arcu, elementum <a id="note-vers-biblio" href="bibliographie.xhtml#biblio-epub30" epub:type="noteref">[IDPF2011, epub 3.0]</a> sit amet ullamcorper sit amet, dignissim sit amet nisl. Suspendisse vel dictum neque. Sed ut erat ullamcorper, molestie diam nec, condimentum mi<a epub:type="noteref" id="note-diverse-ref" href="#note-diverse">*</a>. Maecenas hendrerit augue tortor, in congue dolor ullamcorper ut. Donec fermentum, turpis vitae sollicitudin lobortis, quam urna adipiscing magna, at semper mauris urna a nisl. Aenean ornare, enim commodo suscipit mollis, dolor felis fermentum massa, in dapibus dui eros et nisl. Ut congue lobortis nulla vitae luctus.</p>
+</section>
+
+<section epub:type="backmatter footnote">
+	<h2>Notes de texte</h2>
+<!--
+	les notes de bas de page sont affichées… en bas de page. Mais on aurait pu les mettre à la fin du chapitre, du livre, etc.
+	-->
+
+	<aside class="notes-de-bas-de-page">
+	<ul>
+		<li id="note-quelconque"><a href="#note-quelconque-ref">↑</a> ceci est possiblement très intéressant</li>
+		<li id="note-diverse"><a href="#note-diverse-ref">↑</a> je ne l'aurais pas dis mieux</li>
+	</ul>
+	</aside>
+
+</section>
+
+</body>
+</html>

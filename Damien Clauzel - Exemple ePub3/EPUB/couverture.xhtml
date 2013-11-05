@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+	<meta charset="utf-8"/>
+	<title>Exemple simple, documenté, et valide d’ePub 3.0</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<!--
+	 la page de couverture contient un seul élément : l'appel à l'image
+	si les lecteurs d'ePub identifient la couverture grâce à « properties="cover-image" » dans le <manifest>, elle n'est pas toujours gérée comme étant un élément de l'ePub mais comme quelle que chose à part. En ayant une page l'appelant, on s'assurer de pouvoir la faire apparaître dans le document… même si elle en fait déjà parti.
+	-->
+<body id="section-couverture">
+	<section epub:type="frontmatter cover">
+		<img src="images/couverture.svg" title="couverture de l'ePub"/>
+	</section>
+</body>
+</html>

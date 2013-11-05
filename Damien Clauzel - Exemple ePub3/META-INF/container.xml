@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	rien à faire ici
+	on indique juste où le lecteur doit prendre les métadonnées de l'ePub, pour alimenter le moteur de rendu
+	le nom du fichier est libre (sous réserve de ne pas utiliser des caractères unicode qui font trop peur aux systèmes habitués à de l'ASCII ;)
+	le type mime, lui, est imposé
+	-->
+
+<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container" version="1.0">
+	<rootfiles>
+		<rootfile full-path="EPUB/metadata.opf" media-type="application/oebps-package+xml"/>
+	</rootfiles>
+</container>

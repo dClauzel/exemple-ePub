@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+	<meta charset="utf-8"/>
+	<title>MathML &amp; tables</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<!--
+	une page pour stresser légèrement le lecteur d'ePub avec du MathML
+	notez au passage que la page est déclarée avec le marqueur « properties="mathml" » dans le <manifest> : on est gentil, on prévient qu'il va y avoir du boulot
+-->
+<body>
+
+<section epub:type="bodymatter chapter" id="section-mathml">
+<h1>MathML</h1>
+<p>Des maths… notez que les moteurs de rendu web ont souvent du mal. À part Gecko (Firefox), les autres ont du mal. Ne vous étonnez pas si ça déconne. Surtout sur une liseuse.</p>
+
+<p>Affichage simplisme.</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+	<mi>S</mi>
+</math>
+
+<p>Première équation, simple. Attention, les balises « annotation » sont piègeuses.</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+	<mrow>
+		<mi>x</mi>
+		<mo>=</mo>
+		<mfrac>
+			<mrow>
+				<mo form="prefix">&#x2212;<!-- − --></mo>
+				<mi>b</mi>
+				<mo>&#x00B1;<!-- &PlusMinus; --></mo>
+				<msqrt>
+					<msup>
+						<mi>b</mi>
+						<mn>2</mn>
+					</msup>
+					<mo>&#x2212;<!-- − --></mo>
+					<mn>4</mn>
+					<mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+					<mi>a</mi>
+					<mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+					<mi>c</mi>
+				</msqrt>
+			</mrow>
+			<mrow>
+				<mn>2</mn>
+				<mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+				<mi>a</mi>
+			</mrow>
+		</mfrac>
+	</mrow>
+	<annotation encoding="TeX">
+		x=\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+	</annotation>
+	<annotation encoding="StarMath 5.0">
+		x={-b plusminus sqrt {b^2 - 4 ac}} over {2 a}
+	</annotation>
+</math>
+
+
+<p>Seconde équation, un peu méchante.</p>
+<math xmlns ="http://www.w3.org/1998/Math/MathML">
+	<mrow>
+		<mrow>
+			<msup>
+				<mrow>
+					<mo>( </mo>
+					<mrow>
+						<mo>exp </mo>
+						<mfenced>
+							<mrow>
+								<mi>x </mi>
+								<mo>+ </mo>
+								<mn>3 </mn>
+							</mrow>
+						</mfenced>
+					</mrow>
+					<mo>) </mo>
+				</mrow>
+				<mo>&#x2032; </mo>
+			</msup>
+		</mrow>
+
+		<mrow>
+			<mfrac>
+				<msup>
+					<mo>&#x2202; </mo>
+					<mn>3 </mn>
+				</msup>
+				<mrow>
+					<mo>&#x2202; </mo>
+					<msup>
+						<mi>x </mi>
+						<mn>3 </mn>
+					</msup>
+				</mrow>
+			</mfrac>
+			<mfrac>
+				<msup>
+					<mo>&#x2202; </mo>
+					<mn>2 </mn>
+				</msup>
+				<mrow>
+					<mo>&#x2202; </mo>
+					<msup>
+						<mi>y </mi>
+						<mn>2 </mn>
+					</msup>
+				</mrow>
+			</mfrac>
+			<mo>( </mo>
+			<mrow>
+				<msup>
+					<mi>x </mi>
+					<mi>y </mi>
+				</msup>
+				<mo>+ </mo>
+				<msup>
+					<mi>y </mi>
+					<mi>x </mi>
+				</msup>
+				<mo>+ </mo>
+				<msup>
+					<mi>x </mi>
+					<mi>3 </mi>
+				</msup>
+			</mrow>
+			<mo>) </mo>
+		</mrow>
+	</mrow>
+
+</math>
+
+</section>
+
+<section epub:type="bodymatter chapter" id="section-tables">
+<h1>Tables</h1>
+
+<!--
+	aucune surprise ici, c'est juste une table
+	si votre lecteur d'ePub se loupe ici, jetez-le
+-->
+<table id="table-exemple">
+<caption>Exemple de table</caption>
+<thead>
+	<tr>
+			<th colspan="2" rowspan="2"></th>
+			<th rowspan="2">colonne 1</th>
+			<th colspan="2">colonne 2</th>
+	</tr>
+	<tr>
+			<th>colonne 2a</th>
+			<th>colonne 2b</th>
+			</tr>
+</thead>
+<tbody>
+<tr>
+	<th rowspan="2">ligne 1</th>
+	<th>ligne 1a</th>
+	<td>123</td>
+	<td>456</td>
+	<td>789</td>
+</tr>
+<tr>
+	<th>ligne 1b</th>
+	<td>123</td>
+	<td>456</td>
+	<td>789</td>
+</tr>
+<tr>
+	<th colspan="2">ligne 2</th>
+	<td>123</td>
+	<td>456</td>
+	<td>789</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</body>
+</html>

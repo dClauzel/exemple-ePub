@@ -1,0 +1,40 @@
+/* Police pour les titres */
+@font-face {
+	font-family: 'titre';
+	font-weight: normal;
+	font-style: normal;
+	src:url(../polices/Futura.ttc) format('truetype');
+}
+
+/* Police monoespacée, style TTY VT220 */
+@font-face {
+	font-family: 'terminal';
+	font-weight: normal;
+	font-style: normal;
+	src:url(../polices/Glass_TTY_VT220.ttf) format('truetype');
+}
+
+/* Police pour le texte
+ * La police existe avec plusieurs variantes, que l'on utilise plutôt que de les calculer.
+ * On fait volontairement l'impasse sur les formes condensées, inutilisées dans ce document.
+ */
+@font-face {
+	font-family: 'texte';
+	font-weight: normal;
+	font-style: normal;
+	src:url(../polices/DejaVuSerif.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'texte';
+	font-weight: bold;
+	font-style: normal;
+	src:url(../polices/DejaVuSerif-Bold.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'texte';
+	font-weight: normal;
+	font-style: italic;
+	src:url(../polices/DejaVuSerif-Italic.ttf) format('truetype');
+}

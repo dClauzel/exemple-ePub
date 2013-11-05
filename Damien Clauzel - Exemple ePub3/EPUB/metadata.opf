@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	pour toutes les questions, commencer par regarder les spécifications de de l'ePub3.0 par l'IDPF.
+	la doc est très facilement lisible, quand on a un peu l'habitude.
+	http://www.idpf.org/epub/30/spec/epub30-publications.html
+
+	ah oui, bien sûr : être à l'aise avec le XML et le RDF aide beaucoup ;)
+	-->
+
+<!--
+	<package> est la balise englobante du fichier, et contient l'ensemble des métadonnées. Il contient 3 parties : <metadata>, <manifeste>, spine>
+
+	xmlns, version : œuvre au format ePub v3.0
+	prefix : étendu avec des relations définies par Creative Commons et FoaF
+	unique-identifiant : identifiant interne
+	-->
+<package
+	xmlns="http://www.idpf.org/2007/opf"
+	version="3.0"
+	prefix="cc: http://creativecommons.org/ns# foaf: http://xmlns.com/foaf/spec/"
+	unique-identifier="uid" >
+
+
+<!-- bloc des métadonnées DublinCore -->
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!--
+	URN/URI de l'œuvre, donc son identifiant
+	http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-package-metadata-identifiers
+	http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-opf-dcidentifier
+
+	Comme j'utilise une uri, je peux mettre derrière l'œuvre elle-même, une redirection HTTP 3xx, une fiche de présentation, etc.
+	-->
+<dc:identifier id="uid">http://Damien.Clauzel.eu/uri/Damien Clauzel - Exemple ePub3.epub</dc:identifier>
+
+<!--
+	date de mise à jour de l'œuvre qui ne justifie pas un changement de version (repackaging, etc)
+	une date technique, qui n'est pas celle de publication de l'œuvre
+	toujours exprimé en temps UTC, se génère avec « date -u +"%FT%TZ" »
+	-->
+<meta property="dcterms:modified">2013-11-01T01:59:54Z</meta>
+
+
+<!-- les métadonnées transparentes -->
+
+<!--
+	une œuvre peut avoir plusieurs titres, sous-titres, etc.
+	on défini ici juste le titre principal, en français
+	La property « title-type » défini le titre principal de l'œuvre. On pourrait aussi indiquer un titre complet, le découpage en tomes, éditions, etc.
+	-->
+<dc:title id="titre" xml:lang="fr-FR">Exemple simple, documenté, et valide d’ePub 3.0</dc:title>
+<meta refines="#titre" property="title-type">main</meta>
+
+
+<!--
+	l'auteur, avec aussi :
+	« file-as » dit comment trier son nom dans les catalogues
+	« foaf:homepage » l'URL de son site web; via le vocabulaire FoaF
+	« role » indique que l'auteur de l'œuvre est… l'auteur. D'autres rôles possibles sont traducteur, contributeur, l'assembleur d'un recueil d'œuvres disparates (donc un éditeur, qui n'est pas à confondre avec l'éditeur-producteur)
+	-->
+<dc:creator id="auteur">Damien Clauzel</dc:creator>
+<meta refines="#auteur" property="file-as">Clauzel, Damien</meta>
+<meta refines="#auteur" property="role" scheme="marc:relators">aut</meta>
+<link refines="#auteur" rel="foaf:homepage" href="http://Damien.Clauzel.eu/" />
+		
+
+<!--
+	langue de l'œuvre, d'une façon générale
+	le spécifier ici nous permet de dire que TOUTE l'œuvre est dans cette langue, sauf surcharge locale
+	-->
+<dc:language>fr-FR</dc:language>
+
+<!-- date de la publication (et non pas de la création !) de l'ePub -->
+<dc:date>2013-11-01T01:13:45Z</dc:date>
+
+<!--
+	description de l'œuvre
+	l'une est en français, l'autre en anglais.	
+	-->
+<dc:description xml:lang="fr-FR">Un exemple d'ePub version 3.0, simple sans être minimaliste, et documenté. Avec des polices, images, audio, vidéo, scripts, formulaires, tables, etc.</dc:description>
+<dc:description xml:lang="en-GB">An exemple of ePub version 3.0, simple without being minimalist, et documented. With fonts, images, audio, video, scripts, forms, tables, etc.</dc:description>
+
+
+<!--
+	les licences des ressources utilisées dans cet ePub
+	cette partie est ULTRACHIANTE à créer, car il faut passer en revu chaque ressources, récupérer sa licence explicite, indiquer son origine, l'auteur, si on la dérive, etc.
+	pourtant, elle ne sert absolument à rien dans le rendu de l'ePub (je ne connais aucun lecteur qui exploite ces définitions)
+	mais cela nous permet en règle vis à vis de la loi, et de permettre aux outils de web sémantique de faire du traitement automatique
+	à ma connaissance, je ne connais aucun outil qui prenne cette partie en charge automatiquement, à moins de ne travailler qu'avec un éditeur exploitant directement une base documentaire…
+	-->
+
+<!--
+	la licence de l'œuvre entière, en tant que tel
+	attention, les balises <dc:right> et <link>+<meta> ne travaillent pas ensemble ! Elles décrivent une chose semblable, mais de façons séparées.
+	<dc:rights> défini le texte affiché à l'utilisateur dans les métadonnées de l'œuvre
+	<link>+<meta> servent au web sémantique
+	-->
+<dc:rights xml:lang="fr-FR">CreativeCommons Attribution - Partage dans les Mêmes Conditions 3.0 France (CC BY-SA 3.0 FR)</dc:rights>
+<dc:rights xml:lang="en-GB">CreativeCommons Attribution-ShareAlike 3.0 France (CC BY-SA 3.0 FR)</dc:rights>
+<link rel="cc:license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"/>
+<meta property="cc:attributionURL">http://Damien.Clauzel.eu/</meta>
+<meta property="cc:attributionName">Damien Clauzel</meta>
+
+<!--
+	la licence des images
+	on spécifie l'œuvre d'origine que l'on dérive
+	note : ces images sont déclarées dans le <manifest>, on spécifie juste ici leurs licences
+	« cc:license » renseigne la licence utilisée
+	« cc:attributionURL » renseigne l'auteur
+	-->
+<link rel="cc:license" refines="#image-couverture" href="http://creativecommons.org/licenses/by-sa/3.0/fr/" />
+<link rel="cc:license" refines="#image-phoque" href="https://creativecommons.org/publicdomain/mark/1.0/deed.fr" />
+<link rel="cc:license" refines="#image-logo_epub" href="http://idpf.org/legal/terms-of-use/" />
+<link rel="cc:attributionURL" refines="#image-logo_epub" href="http://www.idpf.org/EPUBlogo/EPUB%20Logo_Official.zip" />
+
+<!--
+	la licence des polices
+	note : ces images sont déclarées dans le <manifest>, on spécifie juste ici leurs licences
+	note : les licences couvrant #police-terminal et #police-titre sont floues, je mets ce que je peux
+	-->
+<link rel="cc:license" refines="#police-texte-DejaVuSerif" href="http://dejavu-fonts.org/wiki/License" />
+<link rel="cc:attributionURL" refines="#police-texte-DejaVuSerif" href="http://dejavu-fonts.org/" />
+<link rel="cc:license" refines="#police-texte-DejaVuSerif-gras" href="http://dejavu-fonts.org/wiki/License" />
+<link rel="cc:attributionURL" refines="#police-texte-DejaVuSerif-gras" href="http://dejavu-fonts.org/" />
+<link rel="cc:license" refines="#police-texte-DejaVuSerif-italique" href="http://dejavu-fonts.org/wiki/License" />
+<link rel="cc:attributionURL" refines="#police-texte-DejaVuSerif-italique" href="http://dejavu-fonts.org/" />
+<link rel="cc:license" refines="#police-texte-DejaVuSerif-italique" href="http://dejavu-fonts.org/wiki/License" />
+<link rel="cc:attributionURL" refines="#police-texte-DejaVuSerif-italique" href="http://dejavu-fonts.org/" />
+<link rel="cc:attributionURL" refines="#police-terminal" href="http://sensi.org/~svo/glasstty/" />
+<link rel="cc:attributionURL" refines="#police-titre" href="https://en.wikipedia.org/wiki/Futura_(typeface)" />
+
+<!--
+	la licence du poème de Charles Baudelaire dans l'épigraphe
+	Lui, il n'est pas déclaré dans le <manifest> mais directement dans la page où il se trouve
+	-->
+<link rel="cc:license" refines="peritexte.xhtml#épigraphe-Baudelaire" href="https://creativecommons.org/publicdomain/mark/1.0/deed.fr" />
+<link rel="cc:attributionURL" refines="peritexte.xhtml#épigraphe-Baudelaire" href="https://fr.wikisource.org/wiki/Épigraphe_pour_un_livre_condamné" />
+
+<!--
+	les licences des médias
+	comme bien souvent sur le web, les licences et les auteurs de ces médias sont floues/inconnues. On mentionne donc uniquement leur origine.
+	deal with it.
+	-->
+<link rel="cc:attributionURL" refines="#média-chameau" href=" http://techslides.com/demos/sample-videos/small.webm" />
+<link rel="cc:attributionURL" refines="#média-jouet" href="http://www.noiseaddicts.com/free-samples-mp3/?id=4931&amp;desc=Camel" />
+
+</metadata>
+
+
+
+
+
+<!--
+	le <manifest> permet de déclarer les ressources utilisées dans cet ePub.
+	ici, on n'utilise que des éléments stockés dans l'archive; mais on pourrait travailler aussi avec des données prises sur le web lors de la lecture de l'ePub : traitement de formulaires, tirer des scripts et images, etc.
+	les id sont capitales, car elles permettent d'attacher des relations à ces ressources déclarées : licences, ordre de lecture, etc.
+	suivant les types de ressources et leur contenu, on précisera si elles contiennent (ou appellent) du svg, du javascript, etc, afin de renseigner le moteur de rendu.
+	oui, faire un ePub à la main est chiant : il faut tout expliciter, partout, tout le temps.
+	-->
+<manifest>
+
+<!--
+	la table des matières et la listes des figures
+	la table des matières est identifiée par les lecteurs grâce à « properties="nav" », et est obligatoire
+	la liste des figures (illustrations et tables, ici) est facultative et libre dans sa déclaration
+	-->
+<item id="texte-sommaire" href="sommaire.xhtml" properties="nav" media-type="application/xhtml+xml" />
+<item id="listes" href="listes.xhtml" media-type="application/xhtml+xml" />
+
+<!--
+	les textes
+	le découpage d'un ePub en différents fichiers est libre. Mais on essaye d'éviter de faire (par exemple) des gros mammouths de 25Mo : les liseuses n'ont pas forcément beaucoup de mémoire, et leurs processeurs supportent mal le stress.
+	-->
+<item id="texte-couverture" href="couverture.xhtml" media-type="application/xhtml+xml" properties="svg"/>
+<item id="texte-titre" href="titre.xhtml" media-type="application/xhtml+xml" properties="svg"/>
+<item id="texte-péritexte" href="peritexte.xhtml" media-type="application/xhtml+xml" />
+<item id="texte-polices" href="polices.xhtml" media-type="application/xhtml+xml" properties="svg" />
+<item id="texte-mathml" href="mathml.xhtml" media-type="application/xhtml+xml" properties="mathml"/>
+<item id="texte-scripts" href="scripts.xhtml" media-type="application/xhtml+xml" properties="scripted"/>
+<item id="texte-médias" href="medias.xhtml" media-type="application/xhtml+xml"/>
+<item id="texte-bibliographie" href="bibliographie.xhtml" media-type="application/xhtml+xml"/>
+
+<!--
+	les images
+	pareil que pour les textes, on déclare les images
+	l'image de couverture est facultative. Si on en met une il faut la désigner avec « properties="cover-image" »
+	note : les licences associées à ces images sont définies dans <metadata>
+	 -->
+<item id="image-couverture" href="images/couverture.svg" media-type="image/svg+xml" properties="cover-image" />
+<item id="image-logo_epub" href="images/EPUB_logo.svg" media-type="image/svg+xml" />
+<item id="image-phoque" href="images/Phoque.svg" media-type="image/svg+xml" />
+
+<!--
+	les médias audio et vidéo
+	rien ne les différencie d'une image, à part le type mime
+	-->
+<item id="média-chameau" href="medias/chameau.mp3" media-type="audio/mpeg" />
+<item id="média-jouet" href="medias/jouet.webm" media-type="video/webm" />
+
+<!--
+	les feuilles de styles
+	facultatives, elles sont quand même bien pratiques pour contrôler l'aspect du rendu ;)
+	on pourrait leur associer une licence et un auteur si on les prenait depuis quelque part, de la même façon qu'on associe une licence à une image
+	ici, elles ont été créées par moi et sont couverte par la déclaration globale de la licence de l'œuvre
+	-->
+<item id="style-polices" href="styles/polices.css" media-type="text/css" />
+<item id="style-général" href="styles/general.css" media-type="text/css" />
+
+<!--
+	les polices de caractères
+	pareil que pour les images; on les appellera depuis les CSS
+	attention : des lecteurs ont du mal avec les polices OpenType. Si vous en utilisez, prévoyez un fallback dans la CSS
+	-->
+<item id="police-titre" href="polices/Futura.ttc" media-type="application/x-font-ttf"/>
+<item id="police-terminal" href="polices/Glass_TTY_VT220.ttf" media-type="application/x-font-ttf"/>
+<item id="police-texte-DejaVuSerif" href="polices/DejaVuSerif.ttf" media-type="application/x-font-ttf"/>
+<item id="police-texte-DejaVuSerif-gras" href="polices/DejaVuSerif-Bold.ttf" media-type="application/x-font-ttf"/>
+<item id="police-texte-DejaVuSerif-italique" href="polices/DejaVuSerif-Italic.ttf" media-type="application/x-font-ttf"/>
+
+</manifest>
+
+<!--
+	<spine> défini la reliure du livre, en organisant l'ordre de lecture des ressources
+	« linear » permet de dire si on veut inclure la page dans la navigation à la main (avant/arrière). Généralement on exclu la couverture, mais parfois aussi des annexes comme les index et bibliographes, qui deviennent restent accessibles par les liens internes et la tables des matières.
+	-->
+<spine page-progression-direction="ltr">
+	<itemref idref="texte-couverture" linear="no"/>
+	<itemref idref="texte-titre" linear="yes" />
+	<itemref idref="texte-péritexte" linear="yes" />
+	<itemref idref="texte-sommaire" linear="yes" />
+	<itemref idref="texte-polices" linear="yes" />
+	<itemref idref="texte-mathml" linear="yes" />
+	<itemref idref="texte-scripts" linear="yes" />
+	<itemref idref="texte-médias" linear="yes" />
+	<itemref idref="texte-bibliographie" linear="yes" />
+	<itemref idref="listes" linear="yes" />
+</spine>
+
+</package>

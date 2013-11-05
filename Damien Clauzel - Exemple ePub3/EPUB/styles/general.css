@@ -1,0 +1,136 @@
+@charset "UTF-8";
+@import "polices.css";
+
+/* CSS ultra rapide, pour mettre un peu en forme les contenus
+ * Rien de spécial à signaler ici, c'est comme un site web.
+ *
+ * Les seules différences sont pour les liseuses :
+ * - l'importance des marges du body
+ * - conserver l'aspect dynamique des contenus : on laisse tout fluide afin de pouvoir ajuster les dimensions à la résolution et à la taille des liseuses. Si on voulait garder le contrôle, il faudrait plutôt faire un PDF, ou un ePub avec une mise en page figée.
+ * - prêter une grande attention aux textes : police, taille, veuves et orphelins, etc.
+ */
+
+/*
+ * corps générale des pages : couleur de fond, marges, etc
+ */
+body {
+	margin-top: 5em;
+	margin-bottom: 5em;
+	margin-left: 3em;
+	margin-right: 3em;
+	text-align: justify;
+
+	background-color: rgb(255,255,245);
+
+	color: black;
+}
+
+/* page de couverture */
+#section-couverture {
+	text-align: center;
+	page-break-after: always;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* contrainte de dimensionnement de l'image de la page de couverture */
+#section-couverture img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+/* titre, de la page de titre */
+#titre {
+	text-align: center;
+	font-family: 'titre', sans-serif;
+	font-weight: bold;
+	font-size: 3.5em;
+}
+
+/* plusieurs effets génériques */
+.emphase {
+	font-style: italic;
+}
+
+.renfort {
+	font-weight: bold;
+}
+
+.terminal {
+	font-family: 'terminal', monospace;
+}
+
+.centrer {
+	text-align: center;
+}
+
+.couleur-BleuDeMinuit {
+	color: MidnightBlue;
+}
+
+.inclure-à-droite {
+	float:right;
+	max-width: 25%;
+}
+
+/* mise en forme des paragraphes et titres */
+p {
+	font-family: serif;
+	font-size: 1em;
+	orphans: 2;
+	widows: 2;
+	line-height: 1.5em;
+	margin: 0;
+	text-align: justify;
+	text-indent: 0;
+	hyphens: auto;
+	hyphenate-after: 3;
+	hyphenate-before: 3;
+	hyphenate-lines: 2;
+}
+
+h1 {
+	font-family: 'titre', sans-serif;
+	font-weight: bolder;
+	font-size: 1.5em;
+	text-align: left;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+}
+
+h2 {
+	font-family: 'titre', sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: left;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+}
+
+h3 {
+	font-family: 'titre', sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: left;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+}
+
+/*
+ * habillage rapide des tables
+ */
+table {
+	border: 1px solid black;
+}
+
+thead {
+	text-align: center;
+}
+
+th {
+	font-weight: bold;
+}
+
+td, th {
+	border: thin solid #6495ed;
+}

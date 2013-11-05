@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Exemple simple, documenté, et valide d’ePub 3.0</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<body>
+
+<!--
+	la page de titre
+	pas obligatoire, mais utile; se place habituellement dans la <spine> juste après la couverture, si celle-ci y est incluse
+	c'est presque toujours la première page que voit le lecteur quand il ouvre un ePub car la couverture est généralement désignée avec « linear=no » dans la <spine>, ce qui veut dire qu'elle n'est pas incluse dans la navigation à la main; la couverture étant plutôt affichée dans le gestionnaire de bibliothèques
+	le titre est isolée, pour forcer l'affichage d'uniquement ce contenu sur une page
+	là encore, pareil que pour la couverture : mise en page moche mais valide
+	-->
+		<section epub:type="frontmatter titlepage" id="section-titre">
+
+			<div id="titre">Exemple simple, documenté, et valide d’ePub 3.0</div>
+
+			<div class="centrer">
+				<img src="images/Phoque.svg" title="un phoque"/>
+				<p class="centrer"><a href="mailto:Damien@Clauzel.eu">Damien Clauzel</a></p>
+			</div>
+
+			</section>
+	</body>
+</html>

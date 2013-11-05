@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+	<meta charset="utf-8"/>
+	<title>javaScripts &amp; formulaires</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<!--
+	la page pour jouer avec les scripts et les formulaires
+	notez au passage que la page est déclarée avec le marqueur « properties="scripted" » dans le <manifest> : on est gentil, on prévient qu'il va y avoir du boulot
+-->
+<body>
+
+<section epub:type="bodymatter chapter" id="section-scripts">
+<h1>JavaScripts</h1>
+
+<p>Malgré les restrictions du cadre du XHTML, on peut malgré tout faire des choses. Par contre, cela demande de réelles compétences en développement web : impossible d'improviser.</p>
+
+<!--
+	attention, afin de valider le XHTML il faut être plus soigneux qu'en html5.
+	aussi, en xhtml :
+	- le contenu des script est déclaré en #PCDATA et non pas en #CDATA. Donc on encapsule. http://www.w3.org/TR/xhtml1/
+	- <noscript> n'existe pas
+	- document.write() n'est pas autorisé https://developer.mozilla.org/en-US/docs/Writing_JavaScript_for_XHTML
+-->
+<script type="text/javascript">
+//<![CDATA[
+	alert("Bonjour ! Je suis une alerte JavaScript");
+//]]>
+</script>
+
+<!--
+	technique pour insérer dynamique en ninja du contenu dans la page.
+	attention : à la moindre erreur, ça casse tout; les parseurs XHTML sont très chatouilleux.
+-->
+<script type="text/javascript">
+//<![CDATA[
+	var balise = document.createElement('div');
+	balise.innerHTML = '<p id="ninja" class="couleur-BleuDeMinuit">Bonjour, je suis un texte <a href="https://fr.wikipedia.org/wiki/Ninja">ninja</a> inséré par JavaScript !</p>';
+	document.body.appendChild(balise);
+//]]>
+</script>
+
+</section>
+
+<!--
+	aucune surprise ici, c'est comme une page web normale
+	-->
+<section epub:type="bodymatter chapter" id="section-formulaires">
+<h1>Formulaires</h1>
+
+<p>Un formulaire qui appel un script affichant « Ça fonctionne ».</p>
+
+<form method="post" action="javascript:alert('Ça fonctionne');">
+<fieldset>
+	<legend>Saisie de texte</legend>
+
+	<label for="texte-js">Entrer quelque chose</label>
+	<input type="text" id="texte-js" /><br />
+
+</fieldset>
+<input type="submit" value="Zou !"/>
+</form>
+
+<p>Un formulaire qui appel un CGI sur le domaine <a href="http://example.com">example.com</a></p>
+
+<form method="post" action="http://example.com/cgi.php">
+<fieldset>
+	<legend>Idem</legend>
+
+	<label for="texte-cgi">Entrer ce que vous voulez</label>
+	<input type="text" id="texte-cgi" /><br />
+
+</fieldset>
+<input type="submit" value="Hop !"/>
+</form>
+
+</section>
+
+</body>
+</html>

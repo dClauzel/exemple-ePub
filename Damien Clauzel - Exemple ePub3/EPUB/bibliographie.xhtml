@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Bibliographie</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<body>
+
+
+<!--
+	bibliographie de l'ePub
+
+	Comme pour la table des matières, vous faite ce que vous voulez du moment que le lecteur s'y retrouve, et que vous suivez les quelques règles de l'IDPF concernant les balises <nav> : http://www.idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-nav
+
+	Un peu plus délicat à générer automatiquement par des scripts, mais les logiciels d'édition d'ePub font normalement ça tout seul.
+-->
+
+<!-- la bibliographie est du matériel de fin d'ouvrage, déclarée comme tel -->
+<section epub:type="backmatter bibliography">
+
+<header>
+	<h1>Bibliographie</h1>
+</header>
+
+<p>Dans tout cet ePub, seule cette bibliographie est intéressante.</p>
+
+
+<!--
+	il est capital d'assigner un id à chaque élément de la bibliographie : c'est lui qui permet de les désigner depuis le texte
+	l'entrée « biblio-epub30 » propose un lien retour, pointant que le texte là où se trouve l'appel à la référence. Du coup on peut naviguer entre le texte et la biblio, sans se retrouver coincer. XeLaTeX+biblatex font ça très bien tous seuls depuis des années, mais l'ePub est encore jeune… :/
+-->
+
+<ul>
+	<li id="biblio-epub30"> <section epub:type="biblioentry"><a href="polices.xhtml#note-vers-biblio">↑</a> <a href="http://www.idpf.org/epub/30/spec/epub30-publications.html">EPUB Publications 3.0</a> </section> </li>
+	<li id="biblio-vocabulaire"> <section epub:type="biblioentry"> <a href="http://www.idpf.org/epub/vocab/structure/">EPUB 3 Structural Semantics Vocabulary</a> </section> </li>
+	<li id="biblio-accessibilité"> <section epub:type="biblioentry"><a href="https://github.com/IDPF/epubcheck">EPUB 3 Accessibility Guidelines</a></section></li>
+	<li id="biblio-média-overlay"> <section epub:type="biblioentry"> <a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html">EPUB Media Overlays 3.0</a> </section> </li>
+	<li id="biblio-média-audio"> <section epub:type="biblioentry"> <a href="http://www.idpf.org/accessibility/guidelines/content/xhtml/audio.php">XHTML Content Documents / Audio</a> </section> </li>
+	<li id="biblio-média-vidéo"> <section epub:type="biblioentry"> <a href="http://www.idpf.org/accessibility/guidelines/content/xhtml/video.php">XHTML Content Documents / Video</a> </section> </li>
+	<li id="biblio-epubcheck"> <section epub:type="biblioentry"><a href="https://github.com/IDPF/epubcheck">ePubCheck</a> : le valideur d'ePub (pas encore officiel ?) de l'IDPF</section></li>
+	<li id="biblio-epubsamples"> <section epub:type="biblioentry"><a href="https://code.google.com/p/epub-samples/">epub-samples</a> : jeu de test de documents ePub 3.0. Pas l'idéal pour apprendre car pas documentés, mais fournissent des bonnes idées</section></li>
+
+	<li id="biblio-Readium"> <section epub:type="biblioentry"><a href="http://readium.github.io/">Readium</a> : à l'heure actuelle, possiblement le meilleur lecteur d'ePub - car il s'appuie directement sur le navigateur web</section></li>
+	<li id="biblio-xhtml1"> <section epub:type="biblioentry"><a href="http://www.w3.org/TR/xhtml1/">XHTML™ 1.0 The Extensible HyperText Markup Language (Second Edition)</a></section></li>
+	<li id="biblio-moz-js-xhtml"> <section epub:type="biblioentry"><a href="http://www.w3.org/TR/xhtml1/">Writing JavaScript for XHTML</a> : Mozilla présente rapidement la problématique du JavaScript pour le XHTML</section></li>
+	<li id="biblio-flossmanual"> <section epub:type="biblioentry"><a href="http://fr.flossmanuals.net/creer-un-epub/">Créer un epub</a> : attention, c'est une documentation qui commence à prendre la poussière. Elle a été rédigée pour l'ePub2, avec quelques remarques pour l'ePub3. Certaines informations ne sont donc <span class="renfort">pas</span> à suivre</section></li>
+</ul>
+</section>
+
+</body>
+</html>

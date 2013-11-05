@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+	<meta charset="utf-8"/>
+	<title>Table des matières</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+<body>
+
+<!--
+	la page dédiée à la table des matières, qui peut être appelée (plusieurs fois si vous en avez envie) dans <spine>
+	les lecteurs la repèrent automatiquement grâce au marqueur « properties="nav" » dans le <manifest>
+
+	la table des matières est habituellement faite avec des listes imbriquées, mais vous pouvez faire ce que vous voulez du moment que le lecteur s'y retrouvent.
+
+	à oui, bien sûr : c'est typiquement le genre de page à générer automatiquement. Si vous la créez et la gérez à la main, vous êtes un malade mental incompétent qui perd son temps sur des bêtises :)
+
+	-->
+
+<section epub:type="frontmatter toc">
+<nav epub:type="toc" id="toc">
+	<h1>Table des matières</h1>
+
+<ol>
+	<li><a epub:type="frontmatter" href="peritexte.xhtml" >Péritexte</a></li>
+	<li><a epub:type="bodymatter" href="polices.xhtml">Effets de texte</a></li>
+	<ol>
+		<li><a epub:type="bodymatter" href="polices.xhtml#section-polices">Polices de caractères</a></li>
+		<li><a epub:type="bodymatter" href="polices.xhtml#section-annotations">Annotations &amp; références</a></li>
+	</ol>
+	<li><a epub:type="bodymatter" href="mathml.xhtml">Math</a></li>
+	<ol>
+	<li><a epub:type="bodymatter" href="mathml.xhtml#section-mathml">MathML</a></li>
+	<li><a epub:type="bodymatter" href="mathml.xhtml#section-tables">Tables</a></li>
+	</ol>
+	<ol>
+		<li><a epub:type="bodymatter" href="scripts.xhtml">JavaScripts &amp; formualires</a></li>
+		<li><a epub:type="bodymatter" href="scripts.xhtml#section-scripts">JavaScripts</a></li>
+		<li><a epub:type="bodymatter" href="scripts.xhtml#section-formulaires">Formulaires</a></li>
+	</ol>
+	<li><a epub:type="bodymatter chapter" href="medias.xhtml" >Médias</a></li>
+	<li><a epub:type="backmatter bibliography" href="bibliographie.xhtml" >Bibliographie</a></li>
+	<li><a epub:type="backmatter" href="listes.xhtml">Liste des figures</a></li>
+	<ol>
+		<li><a epub:type="backmatter loi" href="listes.xhtml">Liste des illustrations</a></li>
+		<li><a epub:type="backmatter lot" href="listes.xhtml">Liste des tables</a></li>
+	</ol>
+	<li><a epub:type="backmatter bibliography" href="bibliographie.xhtml" >Bibliographie</a></li>
+</ol>			
+</nav>
+
+<nav epub:type="landmarks">
+<h2>Guide</h2>
+<ol>
+	<li><a epub:type="frontmatter cover" href="couverture.xhtml" >Couverture</a></li>
+	<li><a epub:type="frontmatter titlepage" href="titre.xhtml" >Page de titre</a></li>
+	<li><a epub:type="frontmatter" href="peritexte.xhtml" >Péritexte</a></li>
+	<li><a epub:type="bodymatter" href="polices.xhtml" >Début du contenu</a></li>
+	<li><a epub:type="backmatter bibliography" href="bibliographie.xhtml" >Bibliographie</a></li>
+	<li><a epub:type="backmatter" href="listes.xhtml">Liste des figures</a></li>
+</ol>
+</nav>
+
+</section>
+
+</body>
+</html>

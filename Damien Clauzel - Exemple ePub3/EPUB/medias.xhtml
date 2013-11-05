@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+	<meta charset="utf-8"/>
+	<title>Médias</title>
+	<link rel="stylesheet" type="text/css" href="styles/general.css"/> 
+</head>
+
+<!--
+	une page pour jouer avec l'audio et la vidéo
+	-->
+<body>
+
+<section epub:type="bodymatter chapter" id="section-médias">
+<h1>Médias</h1>
+<p>Malgré les restrictions du cadre du XHTML, on peut malgré tout faire des choses. Par contre, cela demande de réelles compétences en développement web : impossible d'improviser.</p>
+
+<!--
+	pour l'audio, la norme ePub 3.0 autorise : http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-core-media-types
+	audio/mpeg	MP3
+	audio/mp4	AAC LC audio dans un conteneur MP4
+
+	oui, pas d'Ogg Vorbis ou autres formats louches : pour les utiliser il faut passer par des codes et des ressources étrangères, donc autrement dit des choses pas du tout interopérables sur les liseuses.
+	-->
+
+<audio src="medias/chameau.mp3" controls="controls">
+	<p>Coin ! Pas possible de lire de l'audio</p>
+</audio>
+
+
+<!--
+	pour la vidéo, la norme ePub 3.0 autorise : http://www.idpf.org/accessibility/guidelines/content/xhtml/video.php
+	H.264 et WebM
+-->
+<video src="medias/jouet.webm" controls="controls">
+	<p>Coin ! Pas possible de lire de la vidéo</p>
+</video>
+
+</section>
+
+</body>
+</html>
