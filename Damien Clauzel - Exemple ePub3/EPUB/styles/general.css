@@ -19,10 +19,9 @@ body {
 	margin-left: 3em;
 	margin-right: 3em;
 	text-align: justify;
-
 	background-color: rgb(255,255,245);
-
 	color: black;
+	counter-reset: chapitre; /* compteur pour l'autonumérotation des chapitres (1e niveau, les <h1>) */
 }
 
 /* page de couverture */
@@ -96,6 +95,12 @@ h1 {
 	text-align: left;
 	page-break-after: avoid;
 	page-break-inside: avoid;
+	counter-reset: sous-chapitre;
+	
+}
+h1:before {
+	content: counter(chapitre) ". ";
+	counter-increment: chapitre;
 }
 
 h2 {
@@ -105,6 +110,11 @@ h2 {
 	text-align: left;
 	page-break-after: avoid;
 	page-break-inside: avoid;
+	counter-reset: sous-sous-chapitre;
+}
+h2:before {
+	content: counter(chapitre) "." counter(sous-chapitre) " ";
+	counter-increment: sous-chapitre;
 }
 
 h3 {
@@ -114,6 +124,10 @@ h3 {
 	text-align: left;
 	page-break-after: avoid;
 	page-break-inside: avoid;
+	counter-increment: sous-sous-chapitre;
+}
+h3:before {
+	content: counter(chapitre) "." counter(sous-chapitre) "." counter(sous-sous-chapitre) " ";
 }
 
 /*

@@ -39,7 +39,7 @@
 	une date technique, qui n'est pas celle de publication de l'œuvre
 	toujours exprimé en temps UTC, se génère avec « date -u +"%FT%TZ" »
 	-->
-<meta property="dcterms:modified">2013-11-01T01:59:54Z</meta>
+<meta property="dcterms:modified">2013-11-06T22:01:01Z</meta>
 
 
 <!-- les métadonnées transparentes -->
@@ -166,7 +166,7 @@
 	la liste des figures (illustrations et tables, ici) est facultative et libre dans sa déclaration
 	-->
 <item id="texte-sommaire" href="sommaire.xhtml" properties="nav" media-type="application/xhtml+xml" />
-<item id="listes" href="listes.xhtml" media-type="application/xhtml+xml" />
+<item id="texte-listes" href="listes.xhtml" media-type="application/xhtml+xml" />
 
 <!--
 	les textes
@@ -217,7 +217,6 @@
 <item id="police-texte-DejaVuSerif" href="polices/DejaVuSerif.ttf" media-type="application/x-font-ttf"/>
 <item id="police-texte-DejaVuSerif-gras" href="polices/DejaVuSerif-Bold.ttf" media-type="application/x-font-ttf"/>
 <item id="police-texte-DejaVuSerif-italique" href="polices/DejaVuSerif-Italic.ttf" media-type="application/x-font-ttf"/>
-
 </manifest>
 
 <!--
@@ -234,7 +233,7 @@
 	<itemref idref="texte-scripts" linear="yes" />
 	<itemref idref="texte-médias" linear="yes" />
 	<itemref idref="texte-bibliographie" linear="yes" />
-	<itemref idref="listes" linear="yes" />
+	<itemref idref="texte-listes" linear="yes" />
 </spine>
 
 </package>

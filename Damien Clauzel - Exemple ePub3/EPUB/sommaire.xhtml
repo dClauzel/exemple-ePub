@@ -11,46 +11,50 @@
 	la page dédiée à la table des matières, qui peut être appelée (plusieurs fois si vous en avez envie) dans <spine>
 	les lecteurs la repèrent automatiquement grâce au marqueur « properties="nav" » dans le <manifest>
 
-	la table des matières est habituellement faite avec des listes imbriquées, mais vous pouvez faire ce que vous voulez du moment que le lecteur s'y retrouvent.
+	la toc dans la <nav> est particulière, au sens où elle doit inclure des éléments précis (par exemple, les « titres » des sous-listes via des <span> ou <a>) et pas d'autres. http://www.idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-nav-def-model
 
 	à oui, bien sûr : c'est typiquement le genre de page à générer automatiquement. Si vous la créez et la gérez à la main, vous êtes un malade mental incompétent qui perd son temps sur des bêtises :)
-
 	-->
+
 
 <section epub:type="frontmatter toc">
 <nav epub:type="toc" id="toc">
-	<h1>Table des matières</h1>
+<h1>Table des matières</h1>
 
 <ol>
-	<li><a epub:type="frontmatter" href="peritexte.xhtml" >Péritexte</a></li>
-	<li><a epub:type="bodymatter" href="polices.xhtml">Effets de texte</a></li>
+	<li><a epub:type="frontmatter" href="peritexte.xhtml">Péritexte</a></li>
+	<li><a epub:type="bodymatter" href="polices.xhtml">Effets de texte</a>
 	<ol>
-		<li><a epub:type="bodymatter" href="polices.xhtml#section-polices">Polices de caractères</a></li>
-		<li><a epub:type="bodymatter" href="polices.xhtml#section-annotations">Annotations &amp; références</a></li>
-	</ol>
-	<li><a epub:type="bodymatter" href="mathml.xhtml">Math</a></li>
+		<li><a epub:type="bodymatter chapter" href="polices.xhtml#section-polices">Polices de caractères</a></li>
+		<li><a epub:type="bodymatter chapter" href="polices.xhtml#section-annotations">Annotations &amp; références</a></li>
+	</ol></li>
+	<li><a epub:type="bodymatter" href="mathml.xhtml">Math</a>
 	<ol>
-	<li><a epub:type="bodymatter" href="mathml.xhtml#section-mathml">MathML</a></li>
-	<li><a epub:type="bodymatter" href="mathml.xhtml#section-tables">Tables</a></li>
-	</ol>
+		<li><a epub:type="bodymatter chapter" href="mathml.xhtml#section-mathml">MathML</a></li>
+		<li><a epub:type="bodymatter chapter" href="mathml.xhtml#section-tables">Tables</a></li>
+	</ol></li>
+	<li><a epub:type="bodymatter" href="scripts.xhtml">JavaScripts &amp; formualires</a>
 	<ol>
-		<li><a epub:type="bodymatter" href="scripts.xhtml">JavaScripts &amp; formualires</a></li>
-		<li><a epub:type="bodymatter" href="scripts.xhtml#section-scripts">JavaScripts</a></li>
-		<li><a epub:type="bodymatter" href="scripts.xhtml#section-formulaires">Formulaires</a></li>
-	</ol>
+		<li><a epub:type="bodymatter chapter" href="scripts.xhtml#section-scripts">JavaScripts</a></li>
+		<li><a epub:type="bodymatter chapter" href="scripts.xhtml#section-formulaires">Formulaires</a></li>
+	</ol></li>
 	<li><a epub:type="bodymatter chapter" href="medias.xhtml" >Médias</a></li>
 	<li><a epub:type="backmatter bibliography" href="bibliographie.xhtml" >Bibliographie</a></li>
-	<li><a epub:type="backmatter" href="listes.xhtml">Liste des figures</a></li>
+	<li><a epub:type="backmatter" href="listes.xhtml">Liste des figures</a>
 	<ol>
 		<li><a epub:type="backmatter loi" href="listes.xhtml">Liste des illustrations</a></li>
 		<li><a epub:type="backmatter lot" href="listes.xhtml">Liste des tables</a></li>
-	</ol>
-	<li><a epub:type="backmatter bibliography" href="bibliographie.xhtml" >Bibliographie</a></li>
+	</ol></li>
+	<li><a epub:type="backmatter bibliography" href="bibliographie.xhtml">Bibliographie</a></li>
 </ol>			
 </nav>
 
+<!--
+	le guide des landmarks n'est pas obligatoire, mais apporte une navigation ultrasimple pour accéder aux éléments jugés principaux de l'œuvre.
+	-->
 <nav epub:type="landmarks">
 <h2>Guide</h2>
+
 <ol>
 	<li><a epub:type="frontmatter cover" href="couverture.xhtml" >Couverture</a></li>
 	<li><a epub:type="frontmatter titlepage" href="titre.xhtml" >Page de titre</a></li>
@@ -60,7 +64,6 @@
 	<li><a epub:type="backmatter" href="listes.xhtml">Liste des figures</a></li>
 </ol>
 </nav>
-
 </section>
 
 </body>
