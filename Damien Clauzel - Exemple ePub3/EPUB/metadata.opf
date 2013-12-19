@@ -58,6 +58,8 @@
 	« file-as » dit comment trier son nom dans les catalogues
 	« foaf:homepage » l'URL de son site web; via le vocabulaire FoaF
 	« role » indique que l'auteur de l'œuvre est… l'auteur. D'autres rôles possibles sont traducteur, contributeur, l'assembleur d'un recueil d'œuvres disparates (donc un éditeur, qui n'est pas à confondre avec l'éditeur-producteur)
+
+	la liste des codes MARC : http://www.loc.gov/marc/relators/relaterm.html
 	-->
 <dc:creator id="auteur">Damien Clauzel</dc:creator>
 <meta refines="#auteur" property="file-as">Clauzel, Damien</meta>
